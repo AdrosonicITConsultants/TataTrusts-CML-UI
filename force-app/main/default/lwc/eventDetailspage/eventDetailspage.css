@@ -1,0 +1,384 @@
+@font-face {
+    font-family: Poppinbold;
+   src: url(/resource/Poppinbold);
+  }
+  @font-face {
+    font-family: Poppinregular;
+   src: url(/resource/Poppinregular);
+  }
+  @font-face {
+    font-family: MontserratRegular;
+   src: url(/resource/MontserratRegular);
+  }
+  @font-face {
+    font-family: MontserratMedium;
+   src: url(/resource/MontserratMedium);
+  }
+  @font-face {
+    font-family: Montserratbold;
+   src: url(/resource/Montserratbold);
+  }
+    
+.main_container_div{
+    position: relative;
+    margin-top: -90px;
+    color: black;
+    background-color: white;
+    padding: 3px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 45px;
+    height: auto;
+    padding:30px;
+}
+.main_img_div_bg{
+    width:100%
+}
+.sub_text_p{
+    font-size: 23px;
+    color: grey;
+    font-family: Poppinregular;
+}
+.heading_event{
+    font-size: 27px;
+    font-weight: 600;
+    font-family: Poppinbold;
+    margin-bottom: 15px;
+}
+.event_attender{
+    font-size: 18px;
+    color: cornflowerblue;
+    font-family: Poppinregular;
+}
+.Icon_img{
+    width:25px;
+    margin-right:5px
+}
+.location_calendar-text{
+    font-size: 19px;
+    margin-top: 21px;
+    font-family: Poppinregular;
+    color:grey
+}
+.curated_reg_event_{
+    padding: 10px 25px;
+    background: transparent;
+    border: 2px solid rgb(0 0 0/56%);
+    font-size: 14px;
+    font-weight: 800;
+    color: #000;
+    text-transform: uppercase;
+    border-radius: 7px;
+    font-family: MontserratMedium;
+    margin-top: 20px;
+  }
+  .curated_reg_event_:hover{
+    background:black;
+    color:white
+  }
+  .curated_reg_event_:disabled{
+    cursor:not-allowed;
+  }
+  .curated_reg_event_:disabled:hover{
+    background: transparent;
+    color: #000;
+  }
+  .Seat_available{
+    font-size: 18px;
+    font-family: Poppinregular;
+    color: grey;
+    margin-left: 10px;
+  }
+  .curated_reg_event_notify{
+    font-size: 17px;
+    font-family: Poppinregular;
+    color: grey;
+    margin-top: 14px;
+  }
+
+  .accordanceInput.check_box { 
+    width: 17px;
+    height: 15px;
+    margin-right: 6px;
+}
+.hrclass_event{
+    margin-top: 24px;
+    margin-bottom: 1px;
+      }
+
+.invite_friends{
+        padding: 10px 80px;
+        background: transparent;
+        border: 1px solid ;
+        font-size: 14px;
+        font-weight: 800;
+        color: grey;
+        text-transform: uppercase;
+        border-radius: 7px;
+        font-family: MontserratMedium;
+        float: right;
+      }
+      .invite_friends:hover{
+        background:darkgrey;
+        color:black
+      }
+      .invite_friends:disabled{
+        cursor:not-allowed;
+      }
+      .invite_friends:disabled:hover{
+        background: transparent;
+        color:grey
+      }
+.margin_top_invite_h1{
+    margin-top: 20px;
+}
+.event_guide_div{
+    margin-top: 25px;
+    background: rgb(211 211 211 / 28%);
+    padding:20px
+}
+.event-guide-div_p{
+    font-size: 17px;
+    font-family: Poppinregular;
+}
+.download_pdf{
+    font-size: 19px;
+    color: dimgrey;
+    text-decoration: underline;
+    font-family: MontserratRegular;
+}
+
+.column_{
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+.row_{
+    text-align: center;
+    padding: 10px;
+}
+.round_corner_img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.chief_name{
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Poppinregular;
+
+}
+.chief_designation{
+    color: grey;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: Poppinregular;
+
+}
+.chief_attendess_div{
+    margin-top: 20px;
+    display: flow-root;
+}
+.spanmargin{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* Accordion styles */
+.accordanceRow{
+    margin-top:50px
+}
+
+
+.tab-content {
+  background: white;
+  transition: all 0.35s;
+  font-size: 16px;
+  color: black;
+  font-weight: 500;
+  font-family: Poppinregular;
+  text-align: start;
+  padding: 10px 5px 0px 5px;
+}
+.details,
+.show,
+.hide:target {
+  display: none;
+}
+.hide:target + .show,
+.hide:target ~ .details {
+  display: block;
+}
+.accordanceLabel{
+  font-weight: 700;
+  cursor: pointer;
+  color: black;
+  font-family: Poppinbold;
+  font-size: 20px;
+}
+/* Accordion styles ends */
+
+/* Map  */
+lightning-map {
+  max-height: 300px !important;
+  overflow-y: hidden;
+}
+.map-padding{
+  padding: 20px 30px 20px 30px;
+}
+.lightning-map_map::before {
+  content: "";
+  display: block;
+  height: 0px;
+  width: 100%;
+  padding-top: 26.25% !important;
+}
+
+/* Map  */
+/* Email Form Modal */
+.Invite_modal_window {
+  text-align: center; 
+  background: white;
+  position: fixed;
+  top: 122px;
+  width: 50%;
+  height: 50%;
+  left: 25%;
+  transition: all 0.3s;
+  color:black;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px 7px lightgrey;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.Email_Invite_input{
+  padding: 8px;
+    width: 57%;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+.Email_form_heading{
+  font-size: 25px;
+  padding: 30px;
+ font-family: Poppinbold;
+ margin-top:10%
+}
+.Send_email_btn{
+  padding: 10px;
+    font-size: 16px;
+    margin-top: 40px;
+    width: 150px;
+    border-radius: 5px;
+    border: 1px;
+    background-color: darkgrey;
+    color: white;
+    font-weight: 600;
+}
+.close_btn_email{
+  float: right;
+    padding: 10px;
+    font-weight: 900;
+    font-size: 20px;
+    color: black;
+    cursor:pointer
+}
+/* Modal ends */
+  @media (max-width:439px) {
+    .main_container_div{
+      padding: 15px;
+    }
+    .tab-label{
+      font-size: 15px;
+    }
+    .tab-content{
+      font-size: 13px;
+    }
+    .map-padding{
+      padding: 5px;
+      overflow:scroll !important;
+    }
+    .heading_event{
+        font-size: 18px;
+        margin-bottom: 10px;
+    } 
+    .sub_text_p{
+        font-size: 14px;
+    }
+    .event_attender{
+        font-size: 15px;
+    }
+    .location_calendar-text{
+        font-size: 14px;
+    }
+    .Seat_available{
+        font-size: 13px;
+    }
+    .align_div_center{
+        text-align: center;
+        width:100%
+    }
+    .main_img_div_bg{
+        width:100%;
+        height:43vh;
+        image-rendering: -webkit-optimize-contrast;
+    }
+    .curated_reg_event_{
+        width:100%
+    }
+    .invite_friends{
+        width:100%
+    }
+    .event_guide_div{
+        margin-top: 70px;
+        padding: 5px 5px 5px 7px;
+    }
+    .column_{
+        float: left;
+        width: 100%;
+        padding: 10px;
+    }
+    .event-guide-div_p{
+        font-size: 13px;
+    }
+    .Icon_img{
+      width:15px;
+    }
+    .download_pdf{
+      font-size: 12px;
+    }
+    .round_corner_img{
+      width: 150px;
+      height: 150px;
+    }
+    .howtoreach{
+      margin-top:5px !important
+    }
+    /* modal css Mobile */
+    .Invite_modal_window {
+      text-align: center;
+      width: auto;
+      height: auto;
+      padding: 30px;
+      left: 10%;
+      right: 10%;
+      top: 25%;
+    }
+    .Email_form_heading{
+      font-size: 15px;
+      margin-top:0;
+      padding:15px
+    }
+    .Email_Invite_input{
+      width: 85%;
+    }
+    .close_btn_email{
+      padding:0px;
+      font-size: 11px;
+    }
+  }
+
+

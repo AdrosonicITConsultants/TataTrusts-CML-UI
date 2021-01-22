@@ -1,0 +1,24 @@
+<template>
+    <div class="evencorner-bg">
+        <h1 class="eventcorner_h1_c-suite">C-Suite Conversations</h1>
+      </div>
+    <template if:true={csuite} >
+      <div class="row">
+      <template for:each={csuite} for:item='item'>
+        <div key={item.Id} data-id={item.Id}>
+          <div class="column">
+            <div class="card" onclick={handleToggleClickvideogrid1} data-id={item.Id}>
+                <img src={SpeakerEvent} class="videogrid" onclick={handleToggleClickvideogrid1} />
+                <div onclick={handleToggleClickvideogrid1} class="margintopdiv"><img class="videogridplayicon" src={Playicon}/>
+                  <br/> <p class="griddivtextp">{item.Category__c}</p>
+                  <br/> <p class="griddivtextsubp1">{item.Topic__c}</p>
+                  <br/> <p class="griddivtextsubp2">{item.Guest_Speaker__c}</p>
+                </div>            
+            </div>
+        
+      </div>
+        </div>
+      </template>
+      </div>
+          </template>
+</template>

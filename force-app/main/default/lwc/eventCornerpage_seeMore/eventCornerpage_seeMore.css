@@ -1,0 +1,104 @@
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .griddivtextp{
+    border-radius: 3px;
+    background-color: azure;
+    width: fit-content;
+    padding: 4px;
+    margin-left: 26px;
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: MontserratMedium;
+    margin-top:50px
+  }
+  .griddivtextsubp1{
+    margin-top: -16px;
+    margin-left: 27px;
+    font-size: 27px;
+    color: white;
+    font-weight: 900;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    font-family:MontserratMedium;
+    width: 350px;
+    height: 40px;
+    overflow: auto
+  }
+  .griddivtextsubp2{
+    margin-top: -16px;
+    margin-left: 27px;
+    font-size: 20px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    font-family:MontserratMedium;
+
+  }
+  .videogridplayicon{
+    width: 80px;
+    padding: 0 0 0 21px;
+    margin-left: 10px;
+  }
+  .margintopdiv{
+    margin-top: -224px;;
+    position: absolute;
+  }
+  .videogrid{
+    height: 250px;
+    border-radius: 15px;
+    width: 95%;
+  }
+  .eventcorner_h1_c-suite{
+    color:black;
+    padding:10px;
+    font-size: 28px;
+    font-weight: 900;
+    font-family: Poppinbold;
+  }
+  @media (max-width:768px) {
+    .column {
+        width: 100%;
+      }
+      .videogrid{
+        width: 100%;
+        height:200px;
+        border-radius:15px
+    }
+    .videogridplayicon{
+        width:59px
+    }
+    .griddivtextp{
+        margin-top: 10px;
+    }
+    .griddivtextsubp1{
+        font-size: 16px;
+        width: 200px;
+        height: 24px;
+        overflow: auto;
+      }
+      .griddivtextsubp2{
+        font-size: 14px;
+        height: 20px;
+        overflow: auto;
+        width: 200px;
+      }
+      .margintopdiv{
+        margin-top: -163px;
+        position: absolute;
+      }
+      .eventcorner_h1_c-suite{
+        font-size: 25px;
+        font-weight: 900;
+        font-family: Poppinbold;
+      }
+  }

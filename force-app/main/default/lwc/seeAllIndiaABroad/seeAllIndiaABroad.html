@@ -1,0 +1,34 @@
+<template>
+    <template if:true={indiaabroad} >
+        <div class="evencorner-bg">
+          <h1 class="eventcorner_h1_c-suite">India Abroad | Global Indian's Corner</h1>
+          </div>
+        <div class="row">
+        <template for:each={indiaabroad} for:item='item'>
+          <div key={item.Id} data-id={item.Id}>
+                 <div class="column xscol_global">
+                <div class="card img-global-corner-card" >
+                  <img src={dummyprofile2} class="img_global_corner"/>
+                </div>
+                
+                <div class="global-card">
+                  <p class="global_date">{item.Event_Start_Date__c}</p>
+                  <p class="gloabl_heading_text"> {item.Name}</p>
+                  <div class="largeimgtextsubp2" style="margin-top: 0px; width:65%;height:42px">
+                    {item.Short_Event_Description__c}
+                   </div>   
+                    <button class="Register_card-global_btn">Register Now</button>
+                </div>
+              </div>
+              
+          </div>
+        </template>
+        <template if:true={showmoreIndiaAbroad}>
+          <div class="column xscol_global" style="width: 35%;">
+            <a href="https://trailhead.salesforce.com/en/content/learn/v/modules/lightning_design_system/lightning-design-system3" class="seeallvid">
+              See more</a>     
+               </div>
+        </template>
+        </div>
+      </template>
+</template>

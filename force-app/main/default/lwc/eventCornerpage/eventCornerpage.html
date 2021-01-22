@@ -1,0 +1,338 @@
+<template>
+  <template if:false={showEventDetail}>
+ 
+    <!-- carousel -->
+     
+    <h1 class="eventcorner_h1_c-suite textdecoration_underline">Discover what's happening around you</h1>
+  
+   <div class="main_height">
+    <section class="carousel" aria-label="Gallery">
+      <ol class="carousel__viewport">
+        <li id="carousel__slide1"
+            tabindex="0"
+            class="carousel__slide">
+          <div class="carousel__snapper">
+           <img src={antaran} class="carousel_images"/>
+          </div>
+        </li>
+        <li id="carousel__slide2"
+            tabindex="0"
+            class="carousel__slide">
+          <div class="carousel__snapper">
+            <!-- <img src={Nature2} class="carousel_images"/> -->
+          </div>
+         
+        </li>
+        <li id="carousel__slide3"
+            tabindex="0"
+            class="carousel__slide">
+          <div class="carousel__snapper">
+            <!-- <img src={Nature3} class="carousel_images"/> -->
+          </div>
+         
+        </li>
+        <li id="carousel__slide4"
+            tabindex="0"
+            class="carousel__slide">
+          <div class="carousel__snapper">
+            <!-- <img src={antaran} class="carousel_images"/> -->
+          </div>
+         
+        </li>
+      </ol>
+      <aside class="carousel__navigation">
+        <ol class="carousel__navigation-list">
+          <li class="carousel__navigation-item">
+            <a href="#carousel__slide1"
+               class="carousel__navigation-button">Go to slide 1</a>
+          </li>
+          <li class="carousel__navigation-item">
+            <a href="#carousel__slide2"
+               class="carousel__navigation-button">Go to slide 2</a>
+          </li>
+          <li class="carousel__navigation-item">
+            <a href="#carousel__slide3"
+               class="carousel__navigation-button">Go to slide 3</a>
+          </li>
+          <li class="carousel__navigation-item">
+            <a href="#carousel__slide4"
+               class="carousel__navigation-button">Go to slide 4</a>
+          </li>
+        </ol>
+      </aside>
+    </section>
+   </div>
+  
+   <template if:true={feature_global_event} >
+    <template for:each={feature_global_event} for:item='item'>
+      <div key={item.Id} data-id={item.Id}>
+        <div class="centered_main">  <p class="carouseltext">{item.Event_categoryUI__c}</p> 
+          <p class="carouseltext2"> {item.Name}</p>
+       </div>
+       <div class="centered ">
+         <p class="carouseltext3">Hello | Hello | Hello</p>
+         <hr class="hrclass" style="width: auto;border-top: solid white;"></hr>
+         <p class="carouseltext3">{item.Event_Start_Date__c} | {item.Event_Venue__c} {item.State__c}</p>
+       </div>
+          </div>
+    </template>
+    </template>
+     
+     
+    
+    <!-- carousel -->
+    <div class="">
+     <!-- <input type="text" class="search_bar" placeholder="Search prompts"> -->
+     <lightning-input type="text" variant="label-hidden" class="search_bar" placeholder="Search prompts">
+    </lightning-input>
+    <img src={Searchicon} class="search_icon"/>
+  
+  </div>
+   <!-- Specially Curated  -->
+  <br/>
+  <div > 
+    <div class="evencorner-bg">
+      <h1 class="eventcorner_h1_c-suite">Specially Curated</h1>
+      </div>
+      <div class="container cardcarousel">
+        <div class="row cardcarousel_row" >
+          <div class="card" style="text-align:center">
+            <img src={dummyprofile2}>
+            <div class="card-text" style="text-align:left">
+              <p class="live_event_para" >Event Name</p>
+            <p class="trendingviddesctext speaker-live" style="font-weight: 400;text-align:left">Speaker Name</p>
+            <p class="trendingviddesctext speaker-live" style="font-weight: 400;text-align:left">Speaker descriptor</p>
+            <p class="curated_date">February 07,2021</p>
+            <button class="curated_reg_event_" onclick={handleEventDetails}>Register Now</button>
+  
+            </div>   
+           </div>
+          <div class="card"  style="text-align:center">
+            <img src={dummyprofile2}>
+            <div class="card-text" style="text-align:left">
+              <p class="live_event_para" >Event Name</p>
+            <p class="trendingviddesctext speaker-live" style="font-weight: 400;text-align:left">Speaker Name</p>
+            <p class="trendingviddesctext speaker-live" style="font-weight: 400;text-align:left">Speaker descriptor</p>
+            <p class="curated_date">February 07,2021</p>
+            <button class="curated_reg_event_">Register Now</button>
+  
+  
+            </div>   
+            </div>
+           <div class="card"  style="text-align:center">
+            <img src={dummyprofile2}>
+            <div class="card-text" style="text-align:left">
+              <p class="live_event_para" >Event Name</p>
+            <p class="trendingviddesctext speaker-live" style="font-weight: 400;text-align:left">Speaker Name</p>
+            <p class="trendingviddesctext speaker-live" style="font-weight: 400;text-align:left">Speaker descriptor</p>
+            <p class="curated_date">February 07,2021</p>
+            <button class="curated_reg_event_">Register Now</button>
+  
+            </div>   
+            </div>
+           <div class="card "  style="text-align:center">
+            <img src={dummyprofile2}>
+            <div class="card-text" style="text-align:left">
+              <p class="live_event_para" >Event Name</p>
+            <p class="trendingviddesctext speaker-live" style="font-weight: 400;text-align:left">Speaker Name</p>
+            <p class="trendingviddesctext speaker-live" style="font-weight: 400;text-align:left">Speaker descriptor</p>
+            <p class="curated_date">February 07,2021</p>
+            <button class="curated_reg_event_">Register Now</button>
+  
+            </div>    
+           </div>
+            </div>
+      </div>
+  </div>
+  
+   <!-- specially curated  -->
+    <!-- Grid  -->
+    <div class="evencorner-bg">
+      <h1 class="eventcorner_h1_c-suite">C-Suite Conversations</h1>
+    </div>
+  <template if:true={csuite_4} >
+    <div class="row">
+    <template for:each={csuite_4} for:item='item'>
+      <div key={item.Id} data-id={item.Id}>
+        
+        <div class="column">
+  
+          <div class="card" onclick={handleToggleClickvideogrid1} data-id={item.Id}>
+            <!-- <template if:true={csuite_video} data-id={item.Id}>
+              <video class="videogrid" controls="play">
+                <source src={csuite_video} type="video/mp4" />               
+            </video>  
+            </template> -->
+          
+            <!-- <template if:false={csuite_video}> -->
+              <img src={SpeakerEvent} class="videogrid" onclick={handleToggleClickvideogrid1} />
+              <div onclick={handleToggleClickvideogrid1} class="margintopdiv"><img class="videogridplayicon" src={Playicon}/>
+                <br/> <p class="griddivtextp">{item.Category__c}</p>
+                <br/> <p class="griddivtextsubp1">{item.Topic__c}</p>
+                <br/> <p class="griddivtextsubp2">{item.Guest_Speaker__c}</p>
+
+                  </div>            
+                <!-- </template> -->
+          </div>
+      
+    </div>
+      </div>
+    </template>
+    </div>
+  </template>
+  
+  <template if:true={seemore}>
+    <div class="row" >
+      <a href="" class="seeallvid">
+         See all ></a>
+    </div>
+  </template>
+   
+  <!-- special feature large img  -->
+
+  <template if:true={specialfeature} >
+      <template for:each={specialfeature} for:item='item'>
+        <div key={item.Id} data-id={item.Id}>
+          <template if:true={navigateTovideo}>
+            <video  controls="play" class="largeimgcss">
+              <source src={video1} type="video/mp4" />               
+          </video>  
+          </template>
+          <template if:false={navigateTovideo}>
+            <img src={Carousel1} class="largeimgcss" onclick={handleToggleClick} />
+            <div onclick={handleToggleClick} class="margintopdivlarge">
+              <img class="videogridplayicon" src={Playicon}/>
+             <br/> <p class="trendingvidtext" style="margin-left:10px">Special Feature</p>
+             <br/> <p class="largeimgtextsubp1">{item.Name}
+            </p>
+             <br/> <div class="largeimgtextsubp2">{item.Short_Event_Description__c} </div>
+              </div>  
+          </template>
+        </div>
+    </template> 
+  </template>
+ 
+  <!--special Feature large img  -->
+  
+  <!-- Trending video  -->
+  <template if:true={trendingvideo} >
+    <template for:each={trendingvideo} for:item='item'>
+      <div key={item.Id} data-id={item.Id} onclick={openUrl}>
+        <div class="row trendingvidrowbg">
+          <div class="column column_30_per">
+            <p class="trendingvidtext" >{item.Event_categoryUI__c}</p>
+            <p class="trendingviddesctext" style="margin-top: 10px;">
+            {item.Name} 
+            <br></br>
+              {item.Short_Event_Description__c}
+            </p>
+          </div>
+          <div class="column column_70_per">
+            <video  controls="play" class="largeimgcss">
+              <source src={video1} type="video/mp4" />               
+          </video>
+          </div>
+        </div>
+      </div>
+    </template>
+  </template>
+  
+  <!-- Trending video  -->
+  
+  <!-- Global indian corner  -->
+  <template if:true={indiaabroad} >
+    <div class="evencorner-bg">
+      <h1 class="eventcorner_h1_c-suite">India Abroad | Global Indian's Corner</h1>
+      </div>
+    <div class="row">
+    <template for:each={indiaabroad} for:item='item'>
+      <div key={item.Id} data-id={item.Id}>
+             <div class="column xscol_global" style="width: 35%;">
+            <div class="card img-global-corner-card" style="text-align: start;">
+              <img src={dummyprofile2} class="img_global_corner"/>
+            </div>
+            <div class="global-card">
+              <p class="global_date">{item.Event_Start_Date__c}</p>
+              <p class="gloabl_heading_text"> {item.Name}</p>
+              <div class="largeimgtextsubp2" style="margin-top: 0px; width:100%;height:42px">
+                {item.Short_Event_Description__c}
+               </div>   
+                <button class="Register_card-global_btn">Register Now</button>
+            </div>
+          </div>
+         
+           </div>
+    </template>
+    <template if:true={IndiaAbroadSeemore}>
+      <div class="column xscol_global" style="width: 35%;">
+        <p class="seemoreIamt">
+          <a href="" class="see_more_abroad_register">See more from India Abroad
+            <br/>
+            <img class="see_more_abroad_register_arrow" src={seemorearrow}/>
+          </a>
+        </p>
+       
+     </div>   
+     </template>
+    
+     
+    </div>
+   
+  </template>
+ 
+  <!-- Global indian corner  -->
+  
+  <!-- Live Event  -->
+  <template if:true={liveevent} >
+    <template for:each={liveevent} for:item='item'>
+      <div key={item.Id} data-id={item.Id}>
+    <div class="row trendingvidrowbg">
+      <h1 class="live_event_para"><img src={videorecordicon} class="videorecordicon_size"/>{item.Event_categoryUI__c}</h1>
+      <div class="column xscol_global" style="width:30%">
+        <!-- <video  controls="play" class="largeimgcss">
+          <source src="https://www.youtube.com/embed/45JRuZOBIKk" type="video/mp4" />               
+      </video> -->
+      <iframe class="width_height_iframe_live" src="https://www.youtube.com/embed/SLaWOkc3bC8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+      <div class="column xscol_global" style="width:60%">
+        <p class="live_event_para live_event-heading">{item.Name}</p>
+        <p class="trendingviddesctext live_video_dec">   
+          {item.Event_Speaker__c}
+            {item.Short_Event_Description__c}
+        </p>
+      </div>
+    </div>
+  </div>
+  </template>
+  </template>
+  <!-- Live Event  -->
+  <!-- upcoming event  -->
+  
+    <div class="evencorner-bg">
+      <template if:true={upcomming_event} > <h1 class="eventcorner_h1_c-suite">Upcoming Events</h1>
+      </template>
+
+      </div>
+  <div class="container cardcarousel">
+      <div class="row cardcarousel_row" >
+        <template if:true={upcomming_event} >
+          <template for:each={upcomming_event} for:item='item' >
+        <div class="card " style="text-align:center"  key={item.Id} data-id={item.Id}>
+          <img src={dummyprofile2}>
+          <div class="card-text" style="text-align:left">
+            <p class="live_event_para" >{item.Name}</p>
+          <p class="trendingviddesctext speaker-live" style="font-weight: 400;text-align:left">{item.Short_Event_Description__c}</p>
+          <p class="curated_date">{item.Event_Start_Date__c} | {item.City__c}</p>
+          <button class="curated_reg_event_" onclick={handleNavigate}>Register Now</button>
+          </div>   
+         </div>
+        
+        </template>
+        </template>
+          </div>
+    </div>
+    </template>
+    <!-- <template if:true={showEventDetail}>
+      <c-event-detailspage ></c-event-detailspage>
+      </template> -->
+</template>

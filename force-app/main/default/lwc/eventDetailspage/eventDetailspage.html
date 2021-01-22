@@ -1,0 +1,161 @@
+<template>
+    <div >
+        <img src={antaran} class="main_img_div_bg"/>
+    </div>
+    <div class="main_container_div">
+        <p class="sub_text_p"> <template if:true={Event_tag} >{Event_tag}</template></p>
+        <h1 class="heading_event"><template if:true={Event_name} >{Event_name}</template></h1>
+        <p class="event_attender">Sundar Pichai and 101 members are attending this event</p>
+        <p class="location_calendar-text"> <img src={calendarIcon} class="Icon_img"/> 
+            <template if:true={Event_Start_Date} >
+                <lightning-formatted-date-time
+                value={Event_Start_Date}
+                time-zone="UTC">
+        </lightning-formatted-date-time></template> - 
+         <template if:true={Event_End_Date} >
+             <lightning-formatted-date-time
+            value={Event_End_Date}
+            time-zone="UTC">
+         </lightning-formatted-date-time>
+        </template>
+
+           <span class="spanmargin">|</span>  
+            <template if:true={Event_Start_time} >
+                <lightning-formatted-date-time 
+                value={Event_Start_time} 
+                hour="2-digit" 
+                minute="2-digit"
+                time-zone="UTC" 
+                ></lightning-formatted-date-time>
+            </template>
+                 
+         <template if:true={Event_End_time} >
+             -
+             <lightning-formatted-date-time 
+             value={Event_End_time}
+              hour="2-digit"
+             minute="2-digit" 
+             time-zone="UTC"
+            time-zone-name="short">
+             </lightning-formatted-date-time>
+        </template>
+        </p>
+        <p class="location_calendar-text">
+        <img src={LocationIcon} class="Icon_img"/> 
+        <template if:true={Event_Venue} >{Event_Venue}</template>
+        </p>
+        <p class="align_div_center ">
+        <button class="curated_reg_event_" disabled={modalIsopen}>
+        Register Now
+        </button>
+        <span class="Seat_available">
+        <template if:true={Event_Venue} >
+        Total seat: {Total_seats}
+        </template> 
+        <template if:true={seatAvailable} >
+        <span class="spanmargin">|</span> 
+         Available: {seatAvailable}</template>
+         </span>
+        </p>
+        <template if:true={notifyCheckbox} >
+        <p class="curated_reg_event_notify">
+            <input class="check_box" type="checkbox"/>
+             Notify me in case a seat becomes available
+        </p>
+        </template>
+        <hr class="hrclass_event" style="width: auto;border-top: solid darkgrey;"></hr>
+        <h1 class="heading_event margin_top_invite_h1">Invite your friends 
+            <span class="Seat_available">
+            <button class="invite_friends" onclick={inviteFun} disabled={modalIsopen}>Invite</button>
+        </span>
+        </h1>
+        </p>
+        <template if:true={Event_desc} >
+        <div class="event_guide_div">
+            <h1  class="heading_event">Event Guide</h1>
+            <p class="event-guide-div_p">
+                {Event_desc}
+            </p>
+         <!-- Artifacts    -->
+         <template if:true={ArtifactsArray} >
+            <template for:each={ArtifactsArray} for:item='item'>
+              <div key={item.Id} data-id={item.Id} class="margin_top_invite_h1">
+                <a class="download_pdf" 
+                href={item.Public_URL__c} target="_blank" download>
+                    <img src={downloadIcon} class="Icon_img"/> {item.Name} </a>               
+              </div>
+            </template>
+        </template>
+        
+        <!-- Artifacts end  -->
+        </div>
+        </template>
+        <div class="chief_attendess_div">
+            <template if:true={showTitleChiefateendee}>
+                <h1  class="heading_event">Chief Attendees</h1></template>
+            <div class="row_">
+                <template if:true={CheifArray} >
+                    <template for:each={CheifArray} for:item='item'>
+                      <div key={item.Id} data-id={item.Id}>
+                        <div class="column_">
+                            <img src={antaran} class="round_corner_img"/>
+                            <p class="chief_name">{item.Name__c}</p>
+                            <p class="chief_designation">{item.Role__c},{item.Organisation__c}</p>
+                        </div>
+                      </div>
+                    </template>
+                </template>
+               
+             </div>
+        </div>
+    <!-- maps -->
+    <div class="event_guide_div howtoreach">
+     <h1  class="heading_event">How to reach the Venue</h1>
+     <div class="map-padding">
+        <lightning-map
+        map-markers={mapMarkers}
+        zoom-level="10"
+        list-view="hidden"
+      ></lightning-map>
+     </div>
+    </div>
+    <!-- maps -->
+       
+  <div class="row accordanceRow">
+    <div class="col">
+    <a id="hide1" href="#hide1" class="hide accordanceLabel"> Terms & Conditions <span style="float: right;color:black;font-weight:700">+</span> </a>
+    <a id="show1" href="#show1" class="show accordanceLabel"> Terms & Conditions <span style="float: right;color:black;font-weight:700">-</span></a>
+    <div class="details tab-content">
+        1. Allow Third-Party Hosts for Experience Builder Sites
+        Regardless of your security level, you must allow all non-script resources, such as images, style sheets, and fonts, hosted outside of your Experience Builder site. In addition, if you use the Relaxed CSP security level, you must allow the remote JavaScript file hosts.
+        <br/>
+        2. CSP and Lightning Locker Design Considerations
+        Whether you’re an administrator, content manager, or developer, be aware of the impact of the different security levels on your Experience Builder site. This impact can be far-ranging and unexpected.
+        <br/>
+        3. Select a Security Level in Experience Builder Sites
+        Choose a security level to control whether scripts can be executed from your Experience Builder site and components can share data.     </div>
+  </div>
+    </div>
+    </div>
+
+<!-- Invite Form  -->
+<template if:true={invite}>
+    <div class="row">
+        <div class="col">
+            <div class="Invite_modal_window">
+                <p class="close_btn_email" onclick={closeModal}>X</p>
+                <h1 class="Email_form_heading">Invite Your Friends!</h1>
+                <div>
+                    <!-- <lightning-input type="email" name="myValue" onchange={handleChange}  value={myValue} placeholder="Enter your email" ></lightning-input>  -->
+                <input type="email" placeholder="Enter your email" class="Email_Invite_input" value={myValue} onchange={handleChange}>
+                 <p> <input value="Submit" type="button" class="Send_email_btn" onclick={sendEmail}></p>
+             </div>
+                </div>   
+        </div>
+    </div>
+    
+</template>
+
+<!-- Invite Form  -->
+
+</template>
